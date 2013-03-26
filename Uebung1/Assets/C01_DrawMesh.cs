@@ -46,7 +46,9 @@ public Material myMaterial;
 	
 	// Update is called once per frame
 	void Update () {
-		Graphics.DrawMesh(myMesh, Vector3.zero, Quaternion.identity, myMaterial, 0);
+		transform.position = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0) + transform.position;
+		Graphics.DrawMesh(myMesh, transform.position, Quaternion.identity, myMaterial, 0);
+
 		
 	}
 }
