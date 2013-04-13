@@ -2,8 +2,8 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Kugel.cs">
     <Files>
-      <File FileName="Assets\BaseRotation.cs" Line="16" Column="103" />
-      <File FileName="Assets\Kugel.cs" Line="19" Column="115" />
+      <File FileName="Assets\Kugel.cs" Line="12" Column="18" />
+      <File FileName="Assets\BaseRotation.cs" Line="30" Column="17" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
