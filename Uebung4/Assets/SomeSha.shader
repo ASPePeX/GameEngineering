@@ -37,6 +37,16 @@ Shader "Custom/SomeSha" {
 			o.Gloss = tex.a;
 			o.Alpha = tex.a * _Color.a;
 			o.Specular = _Shininess;
+			
+			if(length(IN.worldPos) <= _Radius1)
+			{
+				o.Albedo += 0.3;
+			}
+			if(length(IN.worldPos) <= _Radius2)
+			{
+				o.Albedo += 0.5;
+			}
+
 		}
 		ENDCG
 	}
