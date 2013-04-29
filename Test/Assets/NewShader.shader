@@ -1,8 +1,12 @@
 Shader "Custom/NewShader" {
 	Properties {
 		//_MainTex ("Base (RGB)", 2D) = "white" {}
-		_MatColor ("Farbe", Color) = (0,1,0,1)
-		_LightPos ("Licht Position", Vector) = (0,0,0,1)
+		_MatColor ("MatFarbe", Color) = (0,1,0,1)
+		_SpecColor ("SpecFarbe", Color) = (0,1,0,1)
+		_LightPos1 ("Licht Position", Vector) = (5,0,0,1)
+		_LightPos2 ("Licht Position", Vector) = (0,5,0,1)
+		_LightPos3 ("Licht Position", Vector) = (0,0,5,1)
+		_LightPos4 ("Licht Position", Vector) = (5,5,5,1)
 		_Shininess ("Shininess", Range(0,2)) = 1.0
 	}
 	SubShader {
@@ -16,8 +20,12 @@ Shader "Custom/NewShader" {
 			#pragma fragment meinPixel
 			#include "UnityCG.cginc"
 			
-			float3 _LightPos;
+			float3 _LightPos1;
+			float3 _LightPos2;
+			float3 _LightPos3;
+			float3 _LightPos4;
 			float3 _MatColor;
+			float3 _SpecColor;
 			float _Shininess;
 			
 			struct VomVertexZumPixel
@@ -36,17 +44,40 @@ Shader "Custom/NewShader" {
 				float3 normaleInKamera = normalize(mul(float3x3(UNITY_MATRIX_MV), vert.normal));
 				
 				float3 diffuse;
-				float3 lightDir = normalize(_LightPos - vert.vertex);
-				float intensity = dot(normalize(vert.vertex), lightDir);
-				if (intensity >= 0)
-					diffuse = intensity * _MatColor;
+				
+				// Light 1
+				float3 lightDir1 = normalize(_LightPos1 - vert.vertex);
+				float intensity1 = dot(normalize(vert.vertex), lightDir1);
+				if (intensity1 >= 0)
+					diffuse += intensity1 * _MatColor;
+
+				// Light 2
+				//float3 lightDir2 = normalize(_LightPos2 - vert.vertex);
+				//float intensity2 = dot(normalize(vert.vertex), lightDir2);
+				//if (intensity2 >= 0)
+				//	diffuse += intensity2 * _MatColor;
+
+				// Light 3
+				//float3 lightDir3 = normalize(_LightPos3 - vert.vertex);
+				//float intensity3 = dot(normalize(vert.vertex), lightDir3);
+				//if (intensity3 >= 0)
+				//	diffuse += intensity3 * _MatColor;
+
+				// Light 4
+				//float3 lightDir4 = normalize(_LightPos4 - vert.vertex);
+				//float intensity4 = dot(normalize(vert.vertex), lightDir4);
+				//if (intensity4 >= 0)
+				//	diffuse += intensity4 * _MatColor;
 				
 				
-				float lightDirInKamera = normalize(mul(float3x3(UNITY_MATRIX_MV), lightDir));
+
+				
+								
+				float lightDirInKamera = normalize(mul(float3x3(UNITY_MATRIX_MV), lightDir1));
 				float cameraDirInKamera = normalize(-mul(UNITY_MATRIX_MV, vert.vertex));
 				float halfAngle = 0.5 * (lightDirInKamera + cameraDirInKamera);
 				
-				float3 specular = pow(dot(halfAngle, normaleInKamera), _Shininess) * _MatColor;
+				float3 specular = pow(dot(halfAngle, normaleInKamera), _Shininess) * _SpecColor;
 				
 				ausgabe.col += diffuse;
 				ausgabe.col += specular;
