@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{6793A634-32BF-B45E-946B-D67E7F73A678}</ProjectGuid>
+	<ProjectGuid>{222EE9C0-EC97-B3FE-CEB9-C2A07828F490}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -44,9 +44,8 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\CamMovement.cs" />
-     <Compile Include="Assets\ShaderControl.cs" />
-     <None Include="Assets\SomeSha.shader" />
+     <Compile Include="Assets\BaseRotation.cs" />
+     <Compile Include="Assets\Kugel.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

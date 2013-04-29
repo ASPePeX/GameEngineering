@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{6793A634-32BF-B45E-946B-D67E7F73A678}</ProjectGuid>
+	<ProjectGuid>{4BF8D66B-1145-3CE2-FA1F-4164A0DC7EE6}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -45,8 +45,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\CamMovement.cs" />
-     <Compile Include="Assets\ShaderControl.cs" />
-     <None Include="Assets\SomeSha.shader" />
+     <None Include="Assets\Standard Assets\Skyboxes\_skybox info.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
