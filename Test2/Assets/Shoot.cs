@@ -17,4 +17,12 @@ public class Shoot : MonoBehaviour {
 		rigidbody.AddForce(0,0,-2000);
 		rigidbody.useGravity = true;
 	}
+	
+	void OnCollisionEnter(Collision collision)
+	{
+	foreach (ContactPoint cp in collision.contacts)
+		{
+			Debug.Log("Collision mit " + cp.otherCollider.name + " bei " + cp);
+		}
+	}
 }
