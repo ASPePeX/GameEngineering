@@ -1,0 +1,16 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Shoot.cs">
+    <Files>
+<<<<<<< HEAD
+      <File FileName="Assets\Shoot.cs" Line="25" Column="69" />
+=======
+      <File FileName="Assets\Shoot.cs" Line="1" Column="1" />
+>>>>>>> 32ea6ce42d8ea2c32caaea22820b5145268b1bc3
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
